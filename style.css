@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    box-sizing: border-box;
+    margin: 50px;
+}
+
+.card {
+    width: 25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border-radius: 20px;
+  border: 1px solid #b4b4b4;
+  cursor: pointer;
+}
+
+.img {
+    background-image: url(https://plus.unsplash.com/premium_photo-1661349653775-aaee1cc05de4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2Zlc3Npb25hbCUyMHByb2ZpbGUlMjBnaXJsfGVufDB8fDB8fHww);
+    background-size:cover;
+    background-position:center;
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    animation: fadeIn 1s linear forwards; 
+}
+.img:hover{
+    animation: fadeIn 1s linear forwards infinite; 
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+        transform: scale(0.95); 
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+}
+
+button {
+    background-color: #ffd900;
+    border: none;
+    width: 40%;
+    margin: 10px auto;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.content h2 {
+    padding-top: 5px;
+    font-size: 35px;
+}
+
+@media screen and (max-width:500px) {
+    .container {
+        flex-direction: column;
+        row-gap: 40px;
+        margin: 100px 40px;
+    }
+
+    .card {
+        width: 100%;
+        transition: box-shadow 1s ease;
+        animation: FadeIn 1s infinite;
+        transform: scale(1.1);
+    }
+    .card:hover{
+        box-shadow: 10px 10px 10px 10px #bbbbbb;
+    }
+  @keyframes FadeIn {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+  }
+    .img {
+        height: 200px;
+    }
+    .content h2 {
+        padding-top: 15px;
+        font-size: 25px;
+    }
+    button {
+        background-color: rgb(0, 255, 0);
+    }
+}
+@media screen and (min-width:900px) {
+    button {
+        background-color: rgb(0, 153, 255);
+        border: none;
+        width: 50%;
+        margin: 10px auto;
+        color: #fff;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 50px;
+        margin: 50px; 
+        justify-content:space-around;
+    }
+
+    .card {
+        width: calc(45% - 10px); 
+    }
+}
